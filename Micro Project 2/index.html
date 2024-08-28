@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Navigation Bar</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Delius+Unicase:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="navbar-left">
+            <a href="#" class="company-name">Dappr</a>
+        </div>
+        <div class="navbar-middle">
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">About Us</a>
+                <a href="#">Information</a>
+                <a href="#">More<i class="ri-arrow-down-s-line"></i></a>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search....">
+                    <button class="search-icon"><i class="ri-search-line" style="color:#9F9F9F;"></i></button>
+                </div>
+            </nav>
+        </div>
+        <div class="navbar-right">
+            <button class="hamburger-icon" onclick="toggleMenu()"><i class="ri-menu-line" style="color:#FFF;"></i></button>
+        </div>
+    </header>
+    <div id="mobile-menu" class="mobile-menu">
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About Us</a>
+            <a href="#">Information</a>
+            <a href="#">More</a>
+            <div class="search-bar-mobile">
+                <input type="text" placeholder="Search...">
+                <button class="search-icon">&#128269;</button>
+            </div>
+        </nav>
+    </div>
+
+    <main class="container">
+        <div class="content">
+            <div class="content-img">
+                <img src="images/image 4.png" alt="image">
+            </div>
+            <div class="content-text">
+                <textarea placeholder="It's not only writers who can benefit from this free online tool. If you're a programmer who's working on a ......"></textarea>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="content-box one">
+                <p>Total Question’s</p>
+                <p>200,000</p>
+            </div>
+            <div class="content-box two">
+                <p>Total Answer’s</p>
+                <p>105,000</p>
+            </div>
+            <div class="content-box three">
+                <p>Participated</p>
+                <p>10,000</p>
+            </div>
+            <div class="content-box four">
+                <p>Total Passed</p>
+                <p>6,000</p>
+            </div>
+        </div>
+
+
+        <div class="info">
+            <div class="info-buttons">
+                <button class="your-info btn">YOUR INFO</button>
+                <button class="another-btn btn">BOOKMARKS</button>
+                <button class="another-btn btn">SETTINGS</button>
+            </div>
+            <div class="info-content">
+                <h2>Your information</h2>
+                <p><strong>Name:</strong> Atul Singhal</p>
+                <p><strong>Email:</strong> atul@gmail.com</p>
+                <p><strong>Phone:</strong> +91 8131424888</p>
+                <p><strong>Marks:</strong> 500.00</p>
+                <button class="next-btn">
+                    Next<i class="ri-arrow-right-line"></i>
+                </button>
+            </div>
+        </div>
+    </main>
+    <div class="social">
+        <div class="social-icons">
+            <img src="images/WhatsApp.png" alt="frame">
+            <img src="images/Facebook.png" alt="frame">
+            <img src="images/Twitter.png" alt="frame">
+        </div>
+    </div>
+    <div class="help-icon">
+        <img src="images/chaticon.png" alt="Help">
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
