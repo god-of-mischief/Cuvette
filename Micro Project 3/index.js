@@ -39,6 +39,7 @@ function calculate() {
 function parseExpression(expr) {
     let tokens = [];
     let currentNumber = '';
+    let operators = ['+', '-', '*', '/'];
     
     for (let char of expr) {
         if (operators.includes(char)) {
@@ -55,39 +56,35 @@ function parseExpression(expr) {
 }
 
 function evaluateTokens(tokens) {
-    let stack = [];
-    let currentOperator = null;
-    
-    for (let token of tokens) {
-        if (typeof token === 'number') {
-            if (currentOperator) {
-                let operand1 = stack.pop();
-                let operand2 = token;
-                let result;
-                
-                switch (currentOperator) {
-                    case '+':
-                        result = operand1 + operand2;
-                        break;
-                    case '-':
-                        result = operand1 - operand2;
-                        break;
-                    case '*':
-                        result = operand1 * operand2;
-                        break;
-                    case '/':
-                        result = operand1 / operand2;
-                        break;
-                }
-                stack.push(result);
-                currentOperator = null;
-            } else {
-                stack.push(token);
-            }
+    let newTokens = [];
+    let i = 0;
+
+    while (i < tokens.length) {
+        if (tokens[i] === '*') {
+            let result = newTokens.pop() * tokens[i + 1];
+            newTokens.push(result);
+            i += 2;
+        } else if (tokens[i] === '/') {
+            let result = newTokens.pop() / tokens[i + 1];
+            newTokens.push(result);
+            i += 2;
         } else {
-            currentOperator = token;
+            newTokens.push(tokens[i]);
+            i++;
         }
     }
-    
-    return stack[0];
+
+    let finalResult = newTokens[0];
+    i = 1;
+
+    while (i < newTokens.length) {
+        if (newTokens[i] === '+') {
+            finalResult += newTokens[i + 1];
+        } else if (newTokens[i] === '-') {
+            finalResult -= newTokens[i + 1];
+        }
+        i += 2;
+    }
+
+    return finalResult;
 }
