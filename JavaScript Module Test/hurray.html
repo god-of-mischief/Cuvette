@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dangrek&display=swap" rel="stylesheet">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="hurray-message">
+        <div class="trophy-image">
+        <img class="image1" src="images/stars.png" alt="">
+        <img class="image2" src="images/trophy.png" alt="">
+        </div>
+        <h1>HURRAY!!</h1>
+        <h2>YOU WON THE GAME</h2>
+     <button id="play-again-2">PLAY AGAIN</button>
+    </div>
+    <div class="footer-buttons">
+        <button id="rules-button">RULES</button>
+
+    </div>
+    <div class="popup-container" id="popup-container">
+        <button class="close-button" id="close-button">X</button>
+        <div class="popup-content">
+          <h3>Game Rules</h3>
+          <ul>
+            <li>Rock beats scissors, scissors beat paper, and paper beats rock.</li>
+            <li>Agree ahead of time whether you’ll count off “rock, paper, scissors, shoot” or just “rock, paper, scissors.”</li>
+            <li>Use rock, paper, scissors to settle minor decisions or simply play to pass the time</li>
+            <li>If both players lay down the same hand, each player lays down another hand</li>
+          </ul>
+        </div>
+    </div>
+    <script>
+        let playAgain2 = document.getElementById("play-again-2")
+        playAgain2.addEventListener('click', function() {
+            window.location.href = "index.html";
+        });
+        let rulesBtn = document.getElementById('rules-button');
+        let closeBtn = document.getElementById('close-button');
+        let popupContainer = document.getElementById("popup-container");
+
+        rulesBtn.addEventListener('click',()=>{
+            popupContainer.style.display = "block";
+        });
+        closeBtn.addEventListener('click',()=>{
+            popupContainer.style.display = "none";
+        });
+    </script>
+</body>
+</html>
